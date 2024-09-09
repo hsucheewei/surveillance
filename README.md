@@ -40,14 +40,14 @@ Before running the project, ensure that you have the following installed:
   npx tailwindcss -i ./public/style.css -o ./public/output.css --watch
   ```
 
+  - **Install Dependencies**:
+  ```bash
+  npm i
+  ```
+
 - **Run Database Migrations**:
   ```bash
   npx prisma migrate dev
-  ```
-
-- **Install Dependencies**:
-  ```bash
-  npm i
   ```
 
 - **Start Development Server**:
