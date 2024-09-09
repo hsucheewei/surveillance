@@ -33,6 +33,22 @@ Before running the project, ensure that you have the following installed:
 - **Backend**: TypeScript, Express.js
 - **Database**: Prisma ORM
 
+# Setting up
+## Create .env file by copying and pasting the following
+```
+# Environment variables declared in this file are automatically made available to Prisma. 
+# See the documentation for more detail: https://pris.ly/d/prisma-schema#accessing-environment-variables-from-the-schema 
+ 
+# Prisma supports the native connection string format for PostgreSQL, MySQL, SQLite, SQL Server, MongoDB and CockroachDB. 
+# See the documentation for all the connection string options: https://pris.ly/d/connection-strings 
+ 
+DATABASE_URL="file:./dev.db" 
+ 
+# Email 
+SENDER_EMAIL='INSERT YOUR OWN EMAIL FOR SENDING OF ALERTS' 
+EMAIL_PASSWORD='INSERT APP PASSWORD'
+```
+
 ## Development Commands
 
 - **Compile TailwindCSS**:
