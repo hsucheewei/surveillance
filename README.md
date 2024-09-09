@@ -16,34 +16,6 @@ Before running the project, ensure that you have the following installed:
 - TailwindCSS
 - A database (configured in `.env`)
 
-## Setup
-
-### 1. Install Dependencies
-First, clone the repository and install all dependencies using `npm`:
-```bash
-npm i
-```
-
-### 2. TailwindCSS Setup
-Run TailwindCSS to compile your styles and watch for changes:
-```bash
-npx tailwindcss -i ./public/style.css -o ./public/output.css --watch
-```
-
-### 3. Prisma Setup
-Next, ensure that your Prisma database migrations are up to date:
-```bash
-npx prisma migrate dev
-```
-
-### 4. Run the Development Server
-To start the development server, run the following command:
-```bash
-npm run dev
-```
-
-This will launch the application at `http://localhost:3000`, where you can view the surveillance dashboard, manage devices, and review footage.
-
 ## Folder Structure
 
 - **/public**: Contains static assets like styles, images, and JavaScript files.
@@ -82,3 +54,5 @@ This will launch the application at `http://localhost:3000`, where you can view 
   ```bash
   npm run dev
   ```
+
+  This will launch the application at `http://localhost:3000`, where you can view the surveillance dashboard, manage devices, and review footage.
