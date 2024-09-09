@@ -39,6 +39,7 @@ Before running the project, ensure that you have the following installed:
   ```bash
   npx tailwindcss -i ./public/style.css -o ./public/output.css --watch
   ```
+**Open a separate terminal and enter these commands**:
 
   - **Install Dependencies**:
   ```bash
