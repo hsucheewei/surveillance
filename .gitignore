@@ -1,0 +1,21 @@
+node_modules
+
+# database
+prisma/migrations
+*.db
+*.db-journal
+
+# environment variables
+.env
+
+# videos
+**/*.mp4
+
+# tailwind css
+/public/css/style.css
+
+# fontawesome
+/public/fontawesome
+
+# build from typescript
+/dist
