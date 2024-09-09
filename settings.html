@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="./output.css" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href=".\fontawesome-free-6.6.0-web\css\all.min.css"
+    />
+    <title>Settings</title>
+    <style>
+      .collapsible-content {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.5s ease-out;
+      }
+
+      .collapsible-content.expanded {
+        max-height: 200px;
+      }
+    </style>
+  </head>
+  <body class="bg-gray-100 text-gray-900">
+    <div class="flex min-h-screen">
+      <!-- Sidebar -->
+      <aside class="bg-white w-64 p-4 border-r">
+        <div class="flex items-center space-x-2 p-4">
+          <!-- Logo -->
+          <span class="text-blue-500 text-2xl font-bold">VIGILANZ</span>
+        </div>
+        <nav class="mt-10">
+          <ul>
+            <li class="mb-4">
+              <a
+                href="/"
+                class="flex items-center p-2 text-gray-500 hover:bg-gray-100 rounded-md"
+              >
+                <i class="fa-solid fa-grip"></i>
+                <span class="ml-4">Overview</span>
+              </a>
+            </li>
+            <li class="mb-4">
+              <a
+                href="/footage"
+                class="flex items-center p-2 text-gray-500 hover:bg-gray-100 rounded-md"
+              >
+                <i class="fa-solid fa-folder"></i>
+                <span class="ml-4">Footage</span>
+              </a>
+            </li>
+            <li class="mb-4">
+              <a
+                href="/devices"
+                class="flex items-center p-2 text-gray-500 hover:bg-gray-100 rounded-md"
+              >
+                <i class="fa-solid fa-video"></i>
+                <span class="ml-4">Devices</span>
+              </a>
+            </li>
+            <li class="mb-4">
+              <a
+                href="#"
+                class="flex items-center p-2 text-blue-500 bg-blue-100 rounded-md"
+              >
+                <i class="fa-solid fa-gear"></i>
+                <span class="ml-4"><b>Settings</b></span>
+              </a>
+            </li>
+            <li>
+              <button
+                id="logout-btn"
+                class="text-red-500 flex items-center p-2 hover:bg-gray-100 rounded-md"
+              >
+                <i class="fa-solid fa-right-from-bracket"></i>
+                <span class="ml-4">Log out</span>
+              </button>
+            </li>
+          </ul>
+        </nav>
+      </aside>
+
+      <!-- Main Content -->
+      <main class="flex-1 p-8">
+        <header class="flex items-center justify-between mb-8">
+          <h1 class="text-5xl font-bold">Settings</h1>
+          <div class="flex items-center space-x-4">
+            <button class="text-gray-600">
+              <span class="material-icons"
+                ><a href="/alerts"
+                  ><i class="fa-solid fa-triangle-exclamation fa-xl"></i></a
+              ></span>
+            </button>
+            <button class="text-gray-600">
+              <span class="material-icons"
+                ><a href="/settings"><i class="fa-solid fa-user fa-xl"></i></a
+              ></span>
+            </button>
+          </div>
+        </header>
+
+        <div class="bg-white shadow-md rounded-lg px-6 max-w-sm">
+          <ul class="divide-y divide-gray-200">
+            <li class="pt-6">
+              <div class="flex items-center justify-between">
+                <div class="flex items-center">
+                  <i class="fa-solid fa-lock text-gray-500 mr-4"></i>
+                  <a
+                    href="#"
+                    class="text-lg font-medium text-gray-700 hover:text-gray-900"
+                    onclick="toggleCollapsible('password-form', 'password-icon')"
+                    >Change password</a
+                  >
+                </div>
+                <i
+                  class="fa-solid fa-chevron-down text-gray-500 transition-transform transform"
+                  id="password-icon"
+                ></i>
+              </div>
+              <form id="password-form" class="my-4 collapsible-content">
+                <div class="mb-4">
+                  <label
+                    for="password"
+                    class="block text-gray-700 font-medium mb-2"
+                    >New password</label
+                  >
+                  <input
+                    type="password"
+                    id="password"
+                    class="w-full px-4 py-2 border rounded-lg text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-400"
+                    placeholder="New password"
+                  />
+                </div>
+                <div class="flex justify-end space-x-4">
+                  <button
+                    type="button"
+                    class="text-gray-700 hover:text-gray-900"
+                    onclick="toggleCollapsible('password-form', 'password-icon')"
+                  >
+                    Cancel
+                  </button>
+                  <button
+                    type="submit"
+                    class="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600"
+                  >
+                    Change Password
+                  </button>
+                </div>
+              </form>
+            </li>
+            <li class="pt-6">
+              <div class="flex items-center justify-between">
+                <div class="flex items-center">
+                  <i class="fa-solid fa-envelope text-gray-500 mr-4"></i>
+                  <a
+                    href="#"
+                    class="text-lg font-medium text-gray-700 hover:text-gray-900"
+                    onclick="toggleCollapsible('email-form', 'email-icon')"
+                    >Change email</a
+                  >
+                </div>
+                <i
+                  class="fa-solid fa-chevron-down text-gray-500 transition-transform transform"
+                  id="email-icon"
+                ></i>
+              </div>
+              <form id="email-form" class="my-4 collapsible-content">
+                <div class="mb-4">
+                  <label
+                    for="email"
+                    class="block text-gray-700 font-medium mb-2"
+                    >New email</label
+                  >
+                  <input
+                    type="email"
+                    id="email"
+                    class="w-full px-4 py-2 border rounded-lg text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-400"
+                    placeholder="New email"
+                  />
+                </div>
+                <div class="flex justify-end space-x-4">
+                  <button
+                    type="button"
+                    class="text-gray-700 hover:text-gray-900"
+                    onclick="toggleCollapsible('email-form', 'email-icon')"
+                  >
+                    Cancel
+                  </button>
+                  <button
+                    type="submit"
+                    class="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600"
+                  >
+                    Change Email
+                  </button>
+                </div>
+              </form>
+            </li>
+            <li class="py-4 flex items-center">
+              <i class="fa-solid fa-xmark text-red-500 mr-4"></i>
+              <a
+                href="#"
+                class="text-lg font-medium text-red-500 hover:text-red-700"
+                >Delete Account</a
+              >
+            </li>
+          </ul>
+        </div>
+      </main>
+    </div>
+
+    <script>
+      function toggleCollapsible(formId, iconId) {
+        const form = document.getElementById(formId);
+        const icon = document.getElementById(iconId);
+
+        if (form.classList.contains("expanded")) {
+          form.classList.remove("expanded");
+          icon.classList.remove("rotate-180");
+        } else {
+          form.classList.add("expanded");
+          icon.classList.add("rotate-180");
+        }
+      }
+    </script>
+  </body>
+  <script src="./auth.js"></script>
+</html>

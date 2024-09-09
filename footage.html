@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="./output.css" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href=".\fontawesome-free-6.6.0-web\css\all.min.css"
+    />
+    <title>Vigilanz</title>
+  </head>
+  <body class="bg-gray-100 text-gray-900">
+    <div class="flex min-h-screen">
+      <!-- Sidebar -->
+      <aside class="bg-white w-64 p-4 border-r">
+        <div class="flex items-center space-x-2 p-4">
+          <!-- Logo -->
+          <span class="text-blue-500 text-2xl font-bold">VIGILANZ</span>
+        </div>
+        <nav class="mt-10">
+          <ul>
+            <li class="mb-4">
+              <a
+                href="/"
+                class="flex items-center p-2 text-gray-500 hover:bg-gray-100 rounded-md"
+              >
+                <i class="fa-solid fa-grip"></i>
+                <span class="ml-4">Overview</span>
+              </a>
+            </li>
+            <li class="mb-4">
+              <a
+                href="#"
+                class="flex items-center p-2 text-blue-500 bg-blue-100 rounded-md"
+              >
+                <i class="fa-solid fa-folder"></i>
+                <span class="ml-4"><b>Footage</b></span>
+              </a>
+            </li>
+            <li class="mb-4">
+              <a
+                href="/devices"
+                class="flex items-center p-2 text-gray-500 hover:bg-gray-100 rounded-md"
+              >
+                <i class="fa-solid fa-video"></i>
+                <span class="ml-4">Devices</span>
+              </a>
+            </li>
+            <li class="mb-4">
+              <a
+                href="/settings"
+                class="flex items-center p-2 text-gray-500 hover:bg-gray-100 rounded-md"
+              >
+                <i class="fa-solid fa-gear"></i>
+                <span class="ml-4">Settings</span>
+              </a>
+            </li>
+            <li>
+              <button
+                id="logout-btn"
+                class="text-red-500 flex items-center p-2 hover:bg-gray-100 rounded-md"
+              >
+                <i class="fa-solid fa-right-from-bracket"></i>
+                <span class="ml-4">Log out</span>
+              </button>
+            </li>
+          </ul>
+        </nav>
+      </aside>
+
+      <!-- Main Content: Two-column layout -->
+      <main class="flex-1 p-8">
+        <header class="flex items-center justify-between mb-8">
+          <h1 class="text-5xl font-bold">Footage</h1>
+          <div class="flex items-center space-x-4">
+            <button class="text-gray-600">
+              <span class="material-icons">
+                <a href="/alerts"
+                  ><i class="fa-solid fa-triangle-exclamation fa-xl"></i
+                ></a>
+              </span>
+            </button>
+            <button class="text-gray-600">
+              <span class="material-icons">
+                <a href="/settings"><i class="fa-solid fa-user fa-xl"></i></a>
+              </span>
+            </button>
+          </div>
+        </header>
+
+        <!-- Two-column grid layout with custom width for the footage list -->
+        <div class="grid grid-cols-[3fr,2fr] gap-4" style="height: 600px">
+          <!-- Footage List (Left side) -->
+          <div
+            class="overflow-y-auto shadow-md sm:rounded-lg"
+            style="height: 100%"
+          >
+            <table class="min-w-full text-left text-sm text-gray-500">
+              <thead class="bg-gray-50 text-xs uppercase text-gray-700">
+                <tr>
+                  <th scope="col" class="px-6 py-3">Date</th>
+                  <th scope="col" class="px-6 py-3">Time</th>
+                  <th scope="col" class="px-6 py-3">Intruder</th>
+                  <th scope="col" class="px-6 py-3">Camera</th>
+                  <th scope="col" class="px-6 py-3">
+                    <span class="sr-only">Delete</span>
+                  </th>
+                </tr>
+              </thead>
+              <tbody
+                id="footage-container"
+                class="divide-y divide-gray-200"
+              ></tbody>
+            </table>
+          </div>
+
+          <!-- Video Player (Right side) -->
+          <div id="videoPlayerContainer" class="hidden" style="height: 100%">
+            <div class="bg-white p-4 rounded-lg shadow-lg h-full">
+              <h2 class="text-xl font-bold mb-4">Footage Playback</h2>
+              <video id="videoPlayer" class="w-full h-auto" controls></video>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <!-- Automatically run authentication check and data fetch on page load -->
+    <script src="app.js"></script>
+    <script src="./auth.js"></script>
+    <script src="/footage.js"></script>
+  </body>
+</html>

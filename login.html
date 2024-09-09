@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="/output.css" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href=".\fontawesome-free-6.6.0-web\css\all.min.css"
+    />
+    <title>Vigilanz</title>
+  </head>
+  <body class="bg-gray-100 text-gray-900">
+    <div class="flex min-h-screen">
+      <!-- Sidebar -->
+      <aside class="bg-white w-64 p-4 border-r">
+        <div class="flex items-center space-x-2 p-4">
+          <!-- Logo -->
+          <span class="text-blue-500 text-2xl font-bold">VIGILANZ</span>
+        </div>
+        <nav class="mt-10"></nav>
+      </aside>
+
+      <!-- Main Content -->
+      <main class="flex-1 p-8">
+        <header class="flex items-center justify-between mb-8">
+          <h1 class="text-5xl font-bold">Login</h1>
+        </header>
+        <ul>
+          <li class="py-4">
+            <form id="login-form" class="my-4 w-3/5">
+              <div class="mb-4">
+                <label
+                  for="email"
+                  class="block text-gray-700 text-xl font-medium mb-2"
+                  >Email</label
+                >
+                <input
+                  type="email"
+                  id="email"
+                  class="w-full px-4 py-2 border rounded-lg text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-400"
+                  placeholder="Email"
+                />
+              </div>
+
+              <div class="mb-4">
+                <label
+                  for="password"
+                  class="block text-gray-700 text-xl font-medium mb-2"
+                  >Password</label
+                >
+                <input
+                  type="password"
+                  id="password"
+                  class="w-full px-4 py-2 border rounded-lg text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-400"
+                  placeholder="Password"
+                />
+              </div>
+
+              <button
+                type="submit"
+                class="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600"
+              >
+                Login
+              </button>
+              <p class="my-4 text-sm">
+                New user? Create an account by signing up:
+                <br />
+                <a href="/signup">
+                  <button
+                    type="button"
+                    class="bg-neutral-500 text-white px-4 py-2 rounded-lg hover:bg-neutral-600 mt-2"
+                  >
+                    Sign up
+                  </button>
+                </a>
+              </p>
+            </form>
+          </li>
+        </ul>
+      </main>
+    </div>
+    <script src="login.js"></script>
+  </body>
+</html>

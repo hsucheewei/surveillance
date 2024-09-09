@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Title of web page -->
+    <title>
+      Multiple object detection using pre trained model in TensorFlow.js
+    </title>
+
+    <!-- Set character encoding to UTF-8 for multi-language support -->
+    <meta charset="utf-8" />
+
+    <!-- Importing Tailwind CSS framework for styling -->
+    <link href="/output.css" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href=".\fontawesome-free-6.6.0-web\css\all.min.css"
+    />
+  </head>
+
+  <body class="bg-gray-100 text-gray-800">
+    <div class="flex min-h-screen">
+      <aside class="bg-white w-64 p-4 border-r">
+        <div class="flex items-center space-x-2 p-4">
+          <!-- Logo -->
+          <span class="text-blue-500 text-2xl font-bold">VIGILANZ</span>
+        </div>
+        <nav class="mt-10">
+          <ul>
+            <li class="mb-4">
+              <a
+                href="/"
+                class="flex items-center p-2 text-gray-500 hover:bg-gray-100 rounded-md"
+              >
+                <i class="fa-solid fa-grip"></i>
+                <span class="ml-4">Overview</span>
+              </a>
+            </li>
+            <li class="mb-4">
+              <a
+                href="/footage"
+                class="flex items-center p-2 text-gray-500 hover:bg-gray-100 rounded-md"
+              >
+                <i class="fa-solid fa-folder"></i>
+                <span class="ml-4">Footage</span>
+              </a>
+            </li>
+            <li class="mb-4">
+              <a
+                href="/devices"
+                class="flex items-center p-2 text-gray-500 hover:bg-gray-100 rounded-md"
+              >
+                <i class="fa-solid fa-video"></i>
+                <span class="ml-4">Devices</span>
+              </a>
+            </li>
+            <li class="mb-4">
+              <a
+                href="/settings"
+                class="flex items-center p-2 text-gray-500 hover:bg-gray-100 rounded-md"
+              >
+                <i class="fa-solid fa-gear"></i>
+                <span class="ml-4">Settings</span>
+              </a>
+            </li>
+            <li>
+              <button
+                id="logout-btn"
+                class="text-red-500 flex items-center p-2 hover:bg-gray-100 rounded-md"
+              >
+                <i class="fa-solid fa-right-from-bracket"></i>
+                <span class="ml-4">Log out</span>
+              </button>
+            </li>
+          </ul>
+        </nav>
+      </aside>
+
+      <main class="flex-1 p-8">
+        <!-- Main heading displaying model loading status -->
+        <h1 id="status" class="text-3xl font-bold">Loading...</h1>
+
+        <!-- Section that will contain the webcam view and any live predictions -->
+        <section
+          id="demos"
+          class="opacity-20 transition-opacity duration-500 ease-in-out mt-8"
+        >
+          <!-- Live View section where the webcam stream will be displayed -->
+          <div
+            id="liveView"
+            class="relative float-left w-[calc(100%-20px)] m-2 cursor-pointer"
+          >
+            <!-- Button to enable the webcam for object detection -->
+            <button
+              id="webcamButton"
+              class="px-4 py-2 bg-blue-500 text-white rounded"
+            >
+              Enable Webcam
+            </button>
+
+            <!-- Video element where live webcam feed is streamed -->
+            <video
+              id="webcam"
+              autoplay
+              muted
+              width="640"
+              height="480"
+              class="block mt-4"
+            ></video>
+
+            <!-- Canvas for drawing detection boxes -->
+            <canvas
+              id="overlay"
+              class="absolute top-0 left-0 hidden"
+              width="640"
+              height="480"
+            ></canvas>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <!-- Importing TensorFlow.js library for running the machine learning model -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs/dist/tf.min.js"
+      type="text/javascript"
+    ></script>
+
+    <!-- Loading the COCO-SSD model (pre-trained for object detection) -->
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/coco-ssd"></script>
+
+    <!-- Custom JavaScript file for authentication functionality -->
+    <script src="/auth.js"></script>
+
+    <!-- Custom JavaScript file handling the object detection logic -->
+    <script src="/detection.js"></script>
+  </body>
+</html>

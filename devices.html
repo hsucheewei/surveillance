@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="./output.css" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href=".\fontawesome-free-6.6.0-web\css\all.min.css"
+    />
+    <title>Vigilanz</title>
+  </head>
+  <body class="bg-gray-100 text-gray-900">
+    <div class="flex min-h-screen">
+      <!-- Sidebar -->
+      <aside class="bg-white w-64 p-4 border-r">
+        <div class="flex items-center space-x-2 p-4">
+          <!-- Logo -->
+          <span class="text-blue-500 text-2xl font-bold">VIGILANZ</span>
+        </div>
+        <nav class="mt-10">
+          <ul>
+            <li class="mb-4">
+              <a
+                href="/"
+                class="flex items-center p-2 text-gray-500 hover:bg-gray-100 rounded-md"
+              >
+                <i class="fa-solid fa-grip"></i>
+                <span class="ml-4">Overview</span>
+              </a>
+            </li>
+            <li class="mb-4">
+              <a
+                href="/footage"
+                class="flex items-center p-2 text-gray-500 hover:bg-gray-100 rounded-md"
+              >
+                <i class="fa-solid fa-folder"></i>
+                <span class="ml-4">Footage</span>
+              </a>
+            </li>
+            <li class="mb-4">
+              <a
+                href="#"
+                class="flex items-center p-2 text-blue-500 bg-blue-100 rounded-md"
+              >
+                <i class="fa-solid fa-video"></i>
+                <span class="ml-4"><b>Devices</b></span>
+              </a>
+            </li>
+            <li class="mb-4">
+              <a
+                href="/settings"
+                class="flex items-center p-2 text-gray-500 hover:bg-gray-100 rounded-md"
+              >
+                <i class="fa-solid fa-gear"></i>
+                <span class="ml-4">Settings</span>
+              </a>
+            </li>
+            <li>
+              <button id="logout-btn" class="text-red-500 flex items-center p-2 hover:bg-gray-100 rounded-md">
+                <i class="fa-solid fa-right-from-bracket"></i>
+                <span class="ml-4">Log out</span>
+              </button>
+            </li>
+          </ul>
+        </nav>
+      </aside>
+
+      <!-- Main Content -->
+      <main class="flex-1 p-8">
+        <header class="flex items-center mb-8 justify-between">
+            <div class="flex gap-6">
+          <h1 class="text-5xl font-bold">Devices</h1>
+          <button
+            class="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600"
+            id="add-btn"
+          >
+            <i class="fa-solid fa-plus mr-2"></i>Add Camera
+          </button></div>
+    
+          <div class="flex items-center space-x-4 ml-auto">
+            <button class="text-gray-600">
+              <span class="material-icons"
+                ><a href="/alerts"><i class="fa-solid fa-triangle-exclamation fa-xl"></a></i
+              ></span>
+            </button>
+            <button class="text-gray-600">
+                <span class="material-icons"
+                ><a href="/settings"><i class="fa-solid fa-user fa-xl"></i
+              ></a></span>
+            </button>
+          </div>
+
+        </header>
+
+        <div id="camera-grid" class="grid grid-cols-3 gap-10 max-w-5xl">
+          <!-- Camera Cards will be dynamically added here -->
+        </div>
+      </main>
+    </div>
+
+    <!-- Link to external JavaScript file -->
+    <script src="./auth.js"></script>
+    
+    <script src="/device.js"></script>
+  </body>
+</html>

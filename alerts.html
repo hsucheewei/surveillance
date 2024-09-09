@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Character encoding set to UTF-8 for multi-language support -->
+    <meta charset="UTF-8" />
+
+    <!-- Viewport meta tag for responsive design on mobile devices -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Link to the output.css file for custom styles -->
+    <link href="./output.css" rel="stylesheet" />
+
+    <!-- Link to Font Awesome icons library for use of icons in the page -->
+    <link rel="stylesheet" href=".\fontawesome-free-6.6.0-web\css\all.min.css" />
+
+    <!-- Title of the web page -->
+    <title>Vigilanz</title>
+  </head>
+  
+  <body class="bg-gray-100 text-gray-900">
+    <!-- Main container with flex layout, taking up the full vertical height of the screen -->
+    <div class="flex min-h-screen">
+
+      <!-- Sidebar section -->
+      <aside class="bg-white w-64 p-4 border-r">
+        <!-- Logo Section in the Sidebar -->
+        <div class="flex items-center space-x-2 p-4">
+          <!-- Application logo with a brand name -->
+          <span class="text-blue-500 text-2xl font-bold">VIGILANZ</span>
+        </div>
+
+        <!-- Navigation menu -->
+        <nav class="mt-10">
+          <ul>
+            <!-- Overview menu item -->
+            <li class="mb-4">
+              <a href="/" class="flex items-center p-2 text-gray-500 hover:bg-gray-100 rounded-md">
+                <i class="fa-solid fa-grip"></i>
+                <span class="ml-4">Overview</span>
+              </a>
+            </li>
+
+            <!-- Footage menu item -->
+            <li class="mb-4">
+              <a href="/footage" class="flex items-center p-2 text-gray-500 hover:bg-gray-100 rounded-md">
+                <i class="fa-solid fa-folder"></i>
+                <span class="ml-4">Footage</span>
+              </a>
+            </li>
+
+            <!-- Devices menu item -->
+            <li class="mb-4">
+              <a href="/devices" class="flex items-center p-2 text-gray-500 hover:bg-gray-100 rounded-md">
+                <i class="fa-solid fa-video"></i>
+                <span class="ml-4">Devices</span>
+              </a>
+            </li>
+
+            <!-- Settings menu item -->
+            <li class="mb-4">
+              <a href="/settings" class="flex items-center p-2 text-gray-500 hover:bg-gray-100 rounded-md">
+                <i class="fa-solid fa-gear"></i>
+                <span class="ml-4">Settings</span>
+              </a>
+            </li>
+
+            <!-- Logout button -->
+            <li>
+              <button id="logout-btn" class="text-red-500 flex items-center p-2 hover:bg-gray-100 rounded-md">
+                <i class="fa-solid fa-right-from-bracket"></i>
+                <span class="ml-4">Log out</span>
+              </button>
+            </li>
+          </ul>
+        </nav>
+      </aside>
+
+      <!-- Main content area -->
+      <main class="flex-1 p-8">
+        <!-- Header with page title and additional icons -->
+        <header class="flex items-center justify-between mb-8">
+          <!-- Page Title -->
+          <h1 class="text-5xl font-bold">Alerts</h1>
+
+          <!-- Action icons on the right of the header -->
+          <div class="flex items-center space-x-4">
+            <button class="text-gray-600">
+              <span class="material-icons">
+                <a href="/alerts"><i class="fa-solid fa-triangle-exclamation fa-xl"></a></i>
+              </span>
+            </button>
+            <button class="text-gray-600">
+              <span class="material-icons">
+                <a href="/settings"><i class="fa-solid fa-user fa-xl"></i></a>
+              </span>
+            </button>
+          </div>
+        </header>
+
+        <button class="ml-2 mb-2 px-2 py-1 bg-red-500 text-white rounded-full" id="clearAlertsButton">Clear Alerts</button>
+
+        <!-- Alerts table to display alerts -->
+        <div class="overflow-x-auto shadow-md sm:rounded-lg">
+          <!-- Table structure for alerts -->
+          <table class="min-w-full text-left text-sm text-gray-500 table-auto">
+            <thead class="bg-gray-50 text-xs uppercase text-gray-700">
+              <tr>
+                <!-- Table column headers -->
+                <th scope="col" class="px-6 py-3 grow-0">
+                  Date & Time
+                </th>
+                <th scope="col" class="px-6 py-3 grow">
+                  Details
+                </th>
+              </tr>
+            </thead>
+            <!-- Table body where alerts will be dynamically inserted -->
+            <tbody id="alertBody" class="divide-y divide-gray-200">
+              <!-- Dynamic rows will be appended here using JavaScript -->
+            </tbody>
+          </table>
+        </div>
+      </main>
+    </div>
+
+    <!-- Link to external JavaScript file for handling alerts -->
+    <script src="alerts.js"></script>
+  </body>
+</html>
